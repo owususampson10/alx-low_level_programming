@@ -1,9 +1,10 @@
 #include "main.h"
-	/**
-	 * main - print _putchar
-	 * is written by mbah
-	 * Return: 0
-	 */
+/**
+ * main - print _putchar
+ * is written by mbah
+ * Description: 'prints _putchar to stdout'
+ * Return: 0 Success
+ */
 
 
 	int main(void)
@@ -19,4 +20,3 @@
 	_putchar('\n');
 	return (0);
 	}
-
