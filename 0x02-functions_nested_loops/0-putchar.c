@@ -2,7 +2,8 @@
 	/**
 	 * main - print _putchar
 	 * is written by mbah
-	 * Return: 0
+	 * Description: 'prints _putchar to stdout'
+	 * Return: 0 Success
 	 */
 
 
@@ -19,4 +20,3 @@
 	_putchar('\n');
 	return (0);
 	}
-
