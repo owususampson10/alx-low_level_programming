@@ -1,5 +1,7 @@
 #include "main.h"
-#include <stdio.h>
+
+int actual_sqrt_recursion(int n, int i);
+
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: number to calculate the square root of
@@ -9,33 +11,22 @@
 int _sqrt_recursion(int n)
 {
 if (n < 0)
-{
 return (-1);
+return (actual_sqrt_recursion(n, 0));
 }
-else if (n == 0 || n == 1)
+/**
+ * actual_sqrt_recursion - recurses to find the natural
+ * square root of a number
+ * @n: number to calculate the sqaure root of
+ * @i: iterator
+ *
+ * Return: the resulting square root
+ */
+int actual_sqrt_recursion(int n, int i)
 {
-return (n);
-}
-else
-{
-int low = 1, high = n, mid, sqrt;
-while (low <= high)
-{
-mid = (low + high) / 2;
-sqrt = n / mid;
-if (sqrt == mid)
-{
-return (sqrt);
-}
-else if (sqrt < mid)
-{
-high = mid - 1;
-}
-else
-{
-low = mid + 1;
-}
-}
-return (high);
-}
+if (i * i > n)
+return (-1);
+if (i * i == n)
+return (i);
+return (actual_sqrt_recursion(n, i + 1));
 }
