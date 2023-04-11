@@ -7,30 +7,16 @@
  * Description: create array of size size and assign char c
  * Return: pointer to array, NULL if fail
  */
-
 char *create_array(unsigned int size, char c)
 {
-	/*Check for invalid input*/
-	if (size == 0)
-	{
-	return (NULL);
-	}
+char *str;
+unsigned int i;
 
-	/*Allocate memory for the char array*/
-	char *str = malloc(size * sizeof(char));
+str = malloc(sizeof(char) * size);
+if (size == 0 || str == NULL)
+return (NULL);
 
-	/*Check if memory allocation was successful*/
-	if (str == NULL)
-	{
-	return (NULL);
-	}
-
-	/*Initialize the array with the given character*/
-	for (unsigned int i = 0; i < size; i++)
-	{
-	str[i] = c;
-	}
-
-	/*Return the pointer to the array*/
-	return (str);
+for (i = 0; i < size; i++)
+str[i] = c;
+return (str);
 }
